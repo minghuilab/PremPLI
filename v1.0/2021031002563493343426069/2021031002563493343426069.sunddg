@@ -1,0 +1,5 @@
+PDBfile	Partner1	Partner2	MutChain	Mutation_PDB	Result_Id	LIG_ID	LIG_POS	PremPLI	Interface
+1OSS.pdb1	A_1	A_1	A_1	Q24E	2273	BEN	A_1__246	1.27	No
+1OSS.pdb1	A_1	A_1	A_1	K82H	2274	BEN	A_1__246	0.59	No
+1OSS.pdb1	A_1	A_1	A_1	P190S	2275	BEN	A_1__246	-0.75	Yes
+1OSS.pdb1	A_1	A_1	A_1	P190V	2276	BEN	A_1__246	1.01	Yes
