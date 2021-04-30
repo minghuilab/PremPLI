@@ -1,0 +1,36 @@
+set pathpara pathinput
+set path pathoutput
+set prot protname
+set nj NumChain
+
+package require psfgen
+topology $pathpara/top_all36_prot.rtf
+topology $pathpara/par_all36_prot.prm
+
+pdbalias residue HIS HSD
+pdbalias residue ASX GLY
+pdbalias residue GLX GLY
+pdbalias residue CSO GLY
+pdbalias residue HIP GLY
+pdbalias residue MSE GLY
+pdbalias residue UNK GLY
+pdbalias residue SEC GLY
+pdbalias residue PYL GLY
+pdbalias residue SEP GLY
+pdbalias residue TPO GLY
+pdbalias residue PTR GLY
+pdbalias residue XLE GLY
+pdbalias residue XAA GLY
+
+pdbalias atom ILE CD1 CD   
+
+for {set j 1} {$j <= $nj} {incr j} {
+segment CH${j} {pdb $path/${prot}_CH${j}.pdb}
+coordpdb $path/${prot}_CH${j}.pdb CH${j} 
+}
+guesscoord
+
+writepdb $path/${prot}_vmd.pdb
+writepsf $path/${prot}_vmd.psf
+
+exit
